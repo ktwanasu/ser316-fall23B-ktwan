@@ -64,6 +64,13 @@ checkstyle {
     toolVersion = "8.4"
 }
 
+tasks.withType(Checkstyle) {
+    reports {
+        html.required.set(true)
+        xml.required.set(false)
+    }
+}
+
 checkstyleMain {
     classpath = sourceSets.main.output + configurations.runtimeClasspath
 }
